@@ -1,0 +1,33 @@
+pipeline {
+agent any
+
+ environment {
+        ACCESS_KEY_ID = credentials('Access_key test')
+        SECRET_ACCESS_KEY = credentials('secret_access_key test')
+            }
+
+    stages {
+              
+        stage('Terraform Init') {
+            steps {
+                // Initialize Terraform
+                sh 'terraform init'
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                // Plan Terraform changes
+                sh 'terraform plan'
+            }
+        }
+        
+        stage('Terraform Apply') {
+            steps {
+                // Apply Terraform changes
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+     
+   }
