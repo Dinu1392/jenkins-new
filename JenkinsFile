@@ -2,8 +2,8 @@ pipeline {
 agent any
 
  environment {
-        ACCESS_KEY_ID = credentials('Access_key test')
-        SECRET_ACCESS_KEY = credentials('secret_access_key test')
+        ACCESS_KEY_ID = credentials('ACCESS_KEY_ID')
+        SECRET_ACCESS_KEY = credentials('SECRET_ACCESS_KEY')
             }
 
     stages {
